@@ -9,7 +9,11 @@
 <link href="/Public/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 <link href="/Public/static/bootstrap/css/docs.css" rel="stylesheet">
 <link href="/Public/static/bootstrap/css/onethink.css" rel="stylesheet">
-
+<title>login</title>
+<link rel="stylesheet" type="text/css" href="/Public/static/login/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/Public/static/login/css/demo.css" />
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="/Public/static/login/css/component.css" />
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
 <script src="/Public/static/bootstrap/js/html5shiv.js"></script>
@@ -35,6 +39,7 @@
         <div class="container">
             <a class="brand" href="<?php echo U('index/index');?>">OneThink</a>
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -74,55 +79,66 @@
 	
 	<!-- 主体 -->
 	
-<header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h2>用户登录</h2>
-    <p><span><span class="pull-left"><span>还没有账号? <a href="<?php echo U('User/register');?>">立即注册</a></span> </span></p>
-  </div>
-</header>
 
 <div id="main-container" class="container">
     <div class="row">
          
         
 <section>
-	<div class="span12">
-        <form class="login-form" action="/index.php?s=/Home/User/login.html" method="post">
-          <div class="control-group">
-            <label class="control-label" for="inputEmail">用户名</label>
-            <div class="controls">
-              <input type="text" id="inputEmail" class="span12" placeholder="请输入用户名"  ajaxurl="/member/checkUserNameUnique.html" errormsg="请填写1-16位用户名" nullmsg="请填写用户名" datatype="*1-16" value="" name="username">
+  <div class="container demo-1">
+    <div class="content">
+      <div id="large-header" class="large-header">
+        <canvas id="demo-canvas"></canvas>
+        <div class="logo_box">
+          <h3>欢迎你</h3>
+          <form class="login-form" action="/index.php?s=/Home/User/login.html" method="post">
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">用户名</label>
+              <div class="controls">
+                <input type="text" id="inputEmail" class="span3" placeholder="请输入用户名"  ajaxurl="/member/checkUserNameUnique.html" errormsg="请填写1-16位用户名" nullmsg="请填写用户名" datatype="*1-16" value="" name="username">
+              </div>
             </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="inputPassword">密码</label>
-            <div class="controls">
-              <input type="password" id="inputPassword"  class="span12" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="password">
+            <div class="control-group">
+              <label class="control-label" for="inputPassword">密码</label>
+              <div class="controls">
+                <input type="password" id="inputPassword"  class="span3" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="password">
+              </div>
             </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="inputPassword">验证码</label>
-            <div class="controls">
-              <input type="text" id="inputPassword" class="span12" placeholder="请输入验证码"  errormsg="请填写5位验证码" nullmsg="请填写验证码" datatype="*5-5" name="verify">
+            <div class="control-group">
+              <label class="control-label" for="inputPassword">验证码</label>
+              <div class="controls">
+                <input type="text" id="inputPassword" class="span3" placeholder="请输入验证码"  errormsg="请填写5位验证码" nullmsg="请填写验证码" datatype="*5-5" name="verify">
+              </div>
             </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label"></label>
-            <div class="controls">
+            <div class="control-group">
+              <label class="control-label"></label>
+              <div class="controls">
                 <img class="verifyimg reloadverify" alt="点击切换" src="<?php echo U('verify');?>" style="cursor:pointer;">
+              </div>
+              <div class="controls Validform_checktip text-warning"></div>
             </div>
-            <div class="controls Validform_checktip text-warning"></div>
-          </div>
-          <div class="control-group">
-            <div class="controls">
-              <label class="checkbox">
-                <input type="checkbox"> 自动登陆
-              </label>
-              <button type="submit" class="btn">登 陆</button>
+            <div class="control-group span6">
+              <div class="controls span2">
+                <label class="span2">
+                  <input type="checkbox"> 自动登陆
+                </label>
+                <button type="submit" class="btn span2" >登 陆</button>
+              </div>
             </div>
+          </form>
+          <label class="checkbox  span1">
+          <div class="container">
+            <p><span class="checkbox span2"><span>还没有账号? <a href="<?php echo U('User/register');?>"><span style="color: #f133f1">立即注册</span></a></span> </span></p>
           </div>
-        </form>
-	</div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div><!-- /container -->
+  <script src="/Public/static/login/js/TweenLite.min.js"></script>
+  <script src="/Public/static/login/js/EasePack.min.js"></script>
+  <script src="/Public/static/login/js/rAF.js"></script>
+  <script src="/Public/static/login/js/demo-1.js"></script>
 </section>
 
     </div>

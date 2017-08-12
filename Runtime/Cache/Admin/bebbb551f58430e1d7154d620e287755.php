@@ -125,7 +125,7 @@
 						<td><?php echo ($channel["question"]); ?></td>
 						<td><?php echo ($channel["content"]); ?></td>
 						<td><?php echo ($channel["status"]); ?></td>
-						<td><?php echo (date("Y-m-d",1502366433)); ?></td>
+						<td><?php echo date('Y-m-d H:i:s',$channel['create_time']);?> </td>
 						<td>
 							<a title="编辑" href="<?php echo U('edit?id='.$channel['id'].'&pid='.$pid);?>">编辑</a>
 							<a href="<?php echo U('setStatus?ids='.$channel['id'].'&status='.abs(1-$channel['status']));?>" class="ajax-get"><?php echo (show_status_op($channel["status"])); ?></a>
@@ -136,6 +136,7 @@
 				<td colspan="6" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
 			</tbody>
 		</table>
+		<div class="result page"><?php echo ($page); ?></div>
 	</div>
 
         </div>

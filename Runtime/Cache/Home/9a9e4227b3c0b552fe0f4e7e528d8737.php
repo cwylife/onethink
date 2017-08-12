@@ -1,13 +1,19 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="UTF-8">
+	
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo C('WEB_SITE_TITLE');?></title>
 <link href="/Public/static/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="/Public/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 <link href="/Public/static/bootstrap/css/docs.css" rel="stylesheet">
 <link href="/Public/static/bootstrap/css/onethink.css" rel="stylesheet">
-
+<title>login</title>
+<link rel="stylesheet" type="text/css" href="/Public/static/login/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/Public/static/login/css/demo.css" />
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="/Public/static/login/css/component.css" />
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
 <script src="/Public/static/bootstrap/js/html5shiv.js"></script>

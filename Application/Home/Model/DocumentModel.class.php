@@ -15,6 +15,12 @@ use Think\Page;
  * 文档基础模型
  */
 class DocumentModel extends Model{
+//     protected $_link=array(
+//         'Profile'=>array(
+//             'mapping_type'=>self::HAS_ONE,
+//             'class_name'=>'DocumentArticle',
+//         )
+//     );
 
 	/* 自动验证规则 */
 	protected $_validate = array(

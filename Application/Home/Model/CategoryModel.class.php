@@ -117,6 +117,7 @@ class CategoryModel extends Model{
 		$field = 'id,name,pid,title,link_id';
 		$category = D('Category')->getTree($cate, $field);
 		$ids = array();
+
 		foreach ($category['_'] as $key => $value) {
 			$ids[] = $value['id'];
 		}

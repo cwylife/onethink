@@ -10,6 +10,7 @@ namespace Admin\Controller;
 
 
 use Think\Controller;
+use Think\Page;
 
 class RepairController extends AdminController
 {
@@ -23,17 +24,28 @@ class RepairController extends AdminController
 //        $pid = i('get.pid', 0);
         /* 获取频道列表 */
      //   $map  = array('status' => array('gt', -1), 'pid'=>$pid);
-         $list = M('Repair')->select();
-         $this->assign('list', $list);
-          $this->meta_title = '保修管理';
-         $this->display();
+//         $list = M('Repair')->select();
+//         $this->assign('list', $list);
+//          $this->meta_title = '保修管理';
+//         $this->display();
+        $Repair = M('Repair'); // 实例化Data数据对象  date 是你的表名
+       // import('ORG.Util.Page');// 导入分页类
+        $count = $Repair->count();// 查询满足要求的总记录数 $map表示查询条件
+        $Page = new Page($count,3);// 实例化分页类 传入总记录数
+        $show = $Page->show();// 分页显示输出
+        // 进行分页数据查询
+        $list = $Repair->limit($Page->firstRow.','.$Page->listRows)->select(); // $Page->firstRow 起始条数 $Page->listRows 获取多少条
+        $this->assign('list',$list);// 赋值数据集
+        $this->assign('page',$show);// 赋值分页输出
+        $this->display(); // 输出模板
+
     }
 
     public function add(){
         if(IS_POST){
             $Repair = D('Repair');
             $data = $Repair->create();
-            $Repair->num=uniqid();
+            //$Repair->num=uniqid();
            // var_dump($data);exit;
             if($data){
                 $id = $Repair->add();

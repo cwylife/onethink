@@ -43,7 +43,7 @@
 						<td>{$channel.question}</td>
 						<td>{$channel.content}</td>
 						<td>{$channel.status}</td>
-						<td><?php echo (date("Y-m-d",$create_time)); ?></td>
+						<td>{:date('Y-m-d H:i:s',$channel['create_time'])} </td>
 						<td>
 							<a title="编辑" href="{:U('edit?id='.$channel['id'].'&pid='.$pid)}">编辑</a>
 							<a href="{:U('setStatus?ids='.$channel['id'].'&status='.abs(1-$channel['status']))}" class="ajax-get">{$channel.status|show_status_op}</a>
@@ -56,6 +56,7 @@
 			</notempty>
 			</tbody>
 		</table>
+		<div class="result page">{$page}</div>
 	</div>
 </block>
 

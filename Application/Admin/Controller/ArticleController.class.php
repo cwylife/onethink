@@ -201,7 +201,6 @@ class ArticleController extends AdminController {
             }else{
                 //开发者可根据父文档的模型类型,按需定制子文档列表
                 $doc_model = M('Document')->where(array('id'=>$pid))->find();
-
                 switch($doc_model['model_id']){
                     default:
                         if($doc_model['type']==2 && $allow_reply){
